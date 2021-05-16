@@ -1,9 +1,0 @@
-{
-    "verbose": true,
-    "ignore": [
-        "views/*",
-        "data/*",
-        "public/*",
-        "config.json"
-    ]
-}
