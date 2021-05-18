@@ -1,5 +1,5 @@
 {
-    "currentVersion": "2.0.8",
+    "currentVersion": "2.0.9",
     "versions":{
         "2.0.3":{
             "FilesChanged":[""]
@@ -18,6 +18,9 @@
         },
         "2.0.8":{
             "FilesChanged": ["server/index.js", "package.json", "package-lock.json","views/admin/settings.ejs"]
-        }
+        },
+        "2.0.9":{
+            "FilesChanged": ["server/index.js", ".env", "package.json", "package-lock.json"]
+        },
     }
 }
