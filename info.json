@@ -1,11 +1,14 @@
 {
-    "currentVersion": "2.0.4",
+    "currentVersion": "2.0.5",
     "versions":{
         "2.0.3":{
             "FilesChanged":[""]
         },
         "2.0.4":{
             "FilesChanged":["nodemon.json"]
+        },
+        "2.0.5":{
+            "FilesChanged:" ["package.json"]
         }
     }
 }
