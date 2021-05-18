@@ -24,6 +24,9 @@
         },
         "2.0.10":{
             "FilesChanged": ["server/index.js", "package.json", "package-lock.json", "views/admin/accounts.ejs", "views/admin/viewUser.ejs"]
+        },
+        "2.0.11":{
+            "FilesChanged": ["server/index.js", "package.json", "package-lock.json", "views/admin/pireps.ejs", "views/admin/viewUser.ejs"]
         }
     }
 }
