@@ -8,7 +8,7 @@
             "FilesChanged":["nodemon.json"]
         },
         "2.0.5":{
-            "FilesChanged:" ["package.json"]
+            "FilesChanged": ["package.json"]
         }
     }
 }
