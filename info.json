@@ -21,6 +21,6 @@
         },
         "2.0.9":{
             "FilesChanged": ["server/index.js", ".env", "package.json", "package-lock.json"]
-        },
+        }
     }
 }
