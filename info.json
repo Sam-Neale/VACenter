@@ -30,6 +30,9 @@
         },
         "2.0.12":{
             "FilesChanged": ["public/assets/styles/main.css", "server/index.js", "views/account.ejs", "views/admin/accounts.ejs", "views/admin/events.ejs", "views/admin/news.ejs", "views/admin/pireps.ejs", "views/admin/settings.ejs", "views/admin/viewEvent.ejs", "views/admin/viewUser.ejs", "views/events.ejs", "views/home.ejs", "views/news.ejs", "views/pirep.ejs"]
+        },
+        "2.0.13":{
+            "FilesChanged": ["server/index.js", "package.json"]
         }
     }
 }
