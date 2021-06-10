@@ -38,7 +38,7 @@
             "FilesChanged": ["server/index.js", "views/components/nav.ejs", "views/components/dark.ejs", "package.json", "package-lock.json", "views/pirep.ejs", "views/home.ejs", "views/news.ejs", "views/account.ejs", "views/events.ejs", "views/admin/viewUser.ejs", "views/admin/viewNews.ejs", "views/admin/viewEvent.ejs", "views/admin/settings.ejs", "views/admin/pireps.ejs", "views/admin/news.ejs", "views/admin/events.ejs", "views/admin/accounts.ejs", "public/assets/styles/main.css"]
         },
         "2.2.0":{
-            "FilesChanged": ["server/index.js", "views/admin/viewUser.ejs"]
+            "FilesChanged": ["server/index.js", "views/admin/viewUser.ejs", "views/components/dark.ejs", "views/components/nav.ejs", "views/admin/settings.ejs"]
         }
     }
 }
