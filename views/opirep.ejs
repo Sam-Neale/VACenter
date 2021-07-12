@@ -31,7 +31,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <% user.pirepsRaw.forEach(pirep =>{%>
+                        <% pireps.forEach(pirep =>{%>
                             <tr style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#modal-<%=pirep.id%>">
                                 <th scope="row"><%= pirep.route %></th>
                                 <td><%= new Date(pirep.filed).toLocaleString("EN-AU", {Hour12: true}) %></td>
@@ -52,7 +52,7 @@
                 </div>
             </div>
         </div>
-        <% user.pirepsRaw.forEach(pirep =>{%>
+        <% pireps.forEach(pirep =>{%>
                                         <!-- Modal -->
                                         <div class="modal fade modal-fullscreen-sm-down" id="modal-<%=pirep.id%>" tabindex="-1"
                                             aria-labelledby="exampleModalLabel" aria-hidden="true">

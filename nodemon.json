@@ -5,6 +5,8 @@
         "data/*",
         "public/*",
         "config.json",
-        "server/stats.json"
+        "server/stats.json",
+        "database.db",
+        "database.db-journal"
     ]
 }

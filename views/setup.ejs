@@ -7,8 +7,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="assets/styles/scroll.css">
-    <link rel="stylesheet" href="assets/styles/main.css">
+    <link rel="stylesheet" href="public/styles/scroll.css">
+    <link rel="stylesheet" href="public/styles/main.css">
 </head>
 <body class="text-center text-light py-5" style="background:linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://webcdn.infiniteflight.com/blog/content/images/2019/08/Facebook.jpg'); background-position: center; background-size: cover;">
         <h1 class="mt-5">Welcome to VACenter</h1>
@@ -40,7 +40,7 @@
                     }
                 });
 
-                xhr.open("POST", "/setupData");
+                xhr.open("POST", "/setup");
                 xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 
                 xhr.send(data);

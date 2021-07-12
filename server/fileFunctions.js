@@ -1,79 +1,72 @@
+//@ts-check
 const fs = require('fs');
-const path = require('path');
-function newError(error, title) {
-    const requestSPECIAL = require('request');
-    const fsSPECIAL = require('fs');
-    const pathSPECIAL = require('path');
-    let config = JSON.parse(fsSPECIAL.readFileSync(pathSPECIAL.join(__dirname, "/../") + "config.json"))
-    let errorB;
-    if (error instanceof Error) {
-        errorB = error.toString()
-    } else if (typeof error == "object") {
-        errorB = JSON.stringify(error)
-    } else {
-        errorB = error;
-    }
-    const options2 = {
-        method: 'POST',
-        url: 'https://error.va-center.com/api/reportBug',
-        form: { title: title ? title : "AUTO - ERROR - " + config.name, body: errorB, contact: JSON.stringify(config) }
-    };
+/**@module File Functions*/
 
-    requestSPECIAL(options2, function (error2, response2, body2) {
-        console.log("NEW REPORT")
-        console.log(options2.form)
-    })
-}
-
-function FileWrite(path, data) {
-    return new Promise(resolve => {
-        fs.writeFile(path, data, function (err) {
-            if (err) {
-                console.error(err)
-                resolve(false)
-                newError(err)
-            } else {
+/**
+ * File Write to FS
+ * @param {string} path 
+ * @param {any} data 
+ * @returns {Promise<boolean|Error>} - Will return error (fail) or true (success) 
+ */
+function FileWrite(path, data){
+    return new Promise((resolve, error) => {
+        fs.writeFile(path, data, (err)=>{
+            if(err){
+                error(err)
+            }else{
                 resolve(true)
             }
         })
     })
-
 }
-function FileExists(path) {
-    return new Promise(resolve => {
-        fs.stat(path, function (err, stat) {
-            if (stat != undefined) {
-                resolve(true);
-            } else {
+/**
+ * 
+ * @param {string} path 
+ * @returns {Promise<string|Error|object|null>} Data from file
+ */
+function FileRead(path){
+    return new Promise((resolve, error) =>{
+        fs.readFile(path, (err, data)=>{
+            if(err){
+                error(err)
+            }else{
+                resolve(data)
+            }
+        })
+    })
+}
+/**
+ * 
+ * @param {string} path 
+ * @returns {Promise<boolean>} State of the file
+ */
+function FileExists(path){
+    return new Promise((resolve, error) =>{
+        fs.access(path, err => {
+            if(err){
                 resolve(false);
+            }else{
+                resolve(true);
             }
         })
     })
-
 }
 
+/**
+ * 
+ * @param {string} path - File Path 
+ * @returns {Promise<boolean|Error>} If operation is successful
+ */
 function FileRemove(path) {
-    return new Promise(resolve => {
-        fs.unlink(path, function (err, data) {
-            resolve(err ? false : data);
+    return new Promise((resolve, error) => {
+        fs.unlink(path, err => {
             if (err) {
-                newError(err)
-                console.error(err)
+                error(err);
+            } else {
+                resolve(true);
             }
         })
     })
 }
 
-function FileRead(path) {
-    return new Promise(resolve => {
-        fs.readFile(path, function (err, data) {
-            resolve(err ? false : data);
-            if (err) {
-                newError(err)
-                console.error(err)
-            }
-        })
-    })
-}
-
-module.exports = {FileRead, FileWrite, FileExists, FileRemove}
+module.exports = {FileWrite, FileRead, FileExists, FileRemove}
